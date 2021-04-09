@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     [SerializeField]
-    private GameObject _ship;
+    private GameObject _ship, _previewShip;
     private GameObject _target;
     private Material _targetMat;
     private int _waterLayer = 1 << 4, _allLayers = 1 << 7;
@@ -21,7 +21,7 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            _target = Instantiate(_ship, hit.point, _ship.transform.rotation);
+            _target = Instantiate(_previewShip, hit.point, _previewShip.transform.rotation);
             _targetMat = _target.gameObject.GetComponent<Renderer>().material;
         }
     }
