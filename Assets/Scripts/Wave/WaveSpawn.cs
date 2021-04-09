@@ -60,8 +60,11 @@ public class WaveSpawn : MonoBehaviour
 
     public void StartSpawn()
     {
-        _currentTime = _timeTillNextSpawn;
-        _spawnActive = true;
-        _waveActive = true;
+        if (!_spawnActive)
+        {
+            _currentTime = _timeTillNextSpawn;
+            _spawnActive = true;
+            _waveActive = true;
+        }
     }
 }
