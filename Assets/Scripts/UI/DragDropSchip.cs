@@ -50,14 +50,13 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
     //Places or destroys the ship based on layermask.
     private void Drop()
     {
+        DestroyImmediate(_target);
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, _waterLayer))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            Instantiate(_ship, hit.point, _ship.transform.rotation);
-            Destroy(_target);
+            if(hit.transform.gameObject.layer == 4)
+                Instantiate(_ship, hit.point, _ship.transform.rotation);
         }
-        else
-            Destroy(_target);
     }
 }
