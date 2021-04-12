@@ -25,6 +25,7 @@ public class BaseScript : MonoBehaviour
         {
             //game over
             _baseHealth = 0;
+            gameObject.SetActive(false);
             Debug.Log("Game over");
         }
     }
