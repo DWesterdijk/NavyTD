@@ -7,12 +7,22 @@ using UnityEngine;
 /// </summary>
 public class EnemyShipControl : MonoBehaviour
 {
-    [SerializeField]
+
     Transform[] _wayPoints;
+
+    GameObject WayPointManagerObj;
+    WayPointManager wayPointManager;
 
     public float EnemyMoveSpeed = 2f;
 
     int _wayPointIndex = 0;
+
+    private void Awake()
+    {
+        WayPointManagerObj = GameObject.FindWithTag("WayPoints");
+        wayPointManager = WayPointManagerObj.GetComponent<WayPointManager>();
+        _wayPoints = wayPointManager.WayPoints;
+    }
 
     private void Start()
     {
