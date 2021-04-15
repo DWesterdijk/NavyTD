@@ -18,6 +18,12 @@ public class GuiHealthBar : MonoBehaviour
 
     private float _sliderValue;
 
+    private void Start()
+    {
+        maxHealth = this.GetComponent<EnemyShipStats>().Health;
+        currentHealth = maxHealth;
+    }
+
     private void Update()
     {
         HealthBarSlider(currentHealth, maxHealth);

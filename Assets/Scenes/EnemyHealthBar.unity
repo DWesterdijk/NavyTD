@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 711260040}
   - component: {fileID: 711260039}
   - component: {fileID: 711260038}
+  - component: {fileID: 711260043}
   - component: {fileID: 711260042}
   m_Layer: 0
   m_Name: Cube
@@ -326,10 +327,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
   color1: {r: 0, g: 1, b: 0, a: 1}
-  currentHealth: 150
-  maxHealth: 150
+  currentHealth: 0
+  maxHealth: 0
   healthBarLength: 60
   healthBarHeight: 10
+--- !u!114 &711260043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711260037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e33dcf196c52e5419b08af3a92acdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 200
 --- !u!1 &1121134086
 GameObject:
   m_ObjectHideFlags: 0
