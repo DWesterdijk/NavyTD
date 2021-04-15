@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
 public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
@@ -7,6 +9,7 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
     private GameObject _ship, _previewShip;
     private GameObject _target;
     private Material _targetMat;
+    private bool _dropable;
     private int _waterLayer = 1 << 4, _allLayers = 1 << 7;
 
     private void Awake()
@@ -23,6 +26,7 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         {
             _target = Instantiate(_previewShip, hit.point, _previewShip.transform.rotation);
             _targetMat = _target.gameObject.GetComponent<Renderer>().material;
+            _target.gameObject.SendMessage("OnSpawn", this, SendMessageOptions.DontRequireReceiver);
         }
     }
 
@@ -34,10 +38,10 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, _allLayers))
         {
             _target.transform.position = hit.point;
-            if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Water"))
-                _targetMat.color = Color.blue;
+            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Water"))
+                _dropable = true;
             else
-                _targetMat.color = Color.red;
+                _dropable = false;
         }
     }
 
@@ -55,8 +59,14 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            if(hit.transform.gameObject.layer == 4)
+            if(hit.transform.gameObject.layer == 4 && _dropable)
                 Instantiate(_ship, hit.point, _ship.transform.rotation);
         }
+    }
+
+    public void SetDropable(bool a)
+    {
+        _dropable = a;
+        Debug.Log(_dropable);
     }
 }
