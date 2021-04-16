@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -182,8 +182,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e50103dfe726f469b799e5be07f489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemies:
+  _wave:
   - {fileID: 6302177978422127867, guid: 80795af462a4b2e41a254870abb3707f, type: 3}
+  - {fileID: 6302177978422127867, guid: 80795af462a4b2e41a254870abb3707f, type: 3}
+  _wave1:
+  - {fileID: 6302177978422127867, guid: 80795af462a4b2e41a254870abb3707f, type: 3}
+  _wave2: []
+  _wave3: []
   _spawnedEnemies: []
   _finishedWave:
     m_PersistentCalls:
@@ -202,6 +207,7 @@ MonoBehaviour:
         m_CallState: 2
   _spawnPoint: {fileID: 1381044175}
   _timeTillNextSpawn: 5
+  _waveNumbText: {fileID: 922019261}
 --- !u!4 &476786701
 Transform:
   m_ObjectHideFlags: 0
@@ -426,10 +432,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -717,7 +723,7 @@ GameObject:
   - component: {fileID: 922019262}
   - component: {fileID: 922019261}
   m_Layer: 5
-  m_Name: Time
+  m_Name: Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
