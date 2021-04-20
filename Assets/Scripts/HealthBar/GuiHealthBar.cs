@@ -27,6 +27,12 @@ public class GuiHealthBar : MonoBehaviour
     private void Update()
     {
         HealthBarSlider(currentHealth, maxHealth);
+
+        if (currentHealth <= 0)
+        {
+            // get score
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnGUI()
