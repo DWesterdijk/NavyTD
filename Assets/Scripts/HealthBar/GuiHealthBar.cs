@@ -20,7 +20,7 @@ public class GuiHealthBar : MonoBehaviour
 
     private void Start()
     {
-        maxHealth = this.GetComponent<EnemyShipStats>().Health;
+        maxHealth = this.GetComponent<EnemyShipStats>().MaxHealth;
         currentHealth = maxHealth;
     }
 
