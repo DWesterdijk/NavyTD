@@ -28,12 +28,24 @@ public class WaveTimer : MonoBehaviour
         if(_currentTime <= 0)
         {
             _timing = false;
-            _finishedTimer.Invoke();
+            FinishedTimer();
         }
+    }
+
+    public void StartWave()
+    {
+        _timing = false;
+        FinishedTimer();
+    }
+
+    private void FinishedTimer()
+    {
+        _finishedTimer.Invoke();
     }
 
     public void RestartTimer()
     {
         _currentTime = _timeTillWave;
+        _timing = true;
     }
 }
