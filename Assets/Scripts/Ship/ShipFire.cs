@@ -20,7 +20,7 @@ public class ShipFire : MonoBehaviour
         }
     }
 
-    private float _shootCooldown = 600f;
+    private float _shootCooldown = 100f;
 
     private void Shoot()
     {
