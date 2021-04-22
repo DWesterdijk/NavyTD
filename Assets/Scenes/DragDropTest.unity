@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ship: {fileID: 5814806971849992999, guid: 76ad05ded6e8bab49a97f8a25c378219, type: 3}
+  _previewShip: {fileID: 3835375293790400329, guid: af5c226cac7255742ac9bd77434e0ad8,
+    type: 3}
 --- !u!114 &666629506
 MonoBehaviour:
   m_ObjectHideFlags: 0
