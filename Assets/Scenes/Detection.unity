@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1b0fa3440b694a94b7a91ba96db58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 50
   targets: []
 --- !u!1 &69760910
 GameObject:
@@ -309,8 +310,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69760910}
-  m_LocalRotation: {x: 0.001489539, y: 0.89206195, z: -0.45190114, w: 0.0029405311}
-  m_LocalPosition: {x: -3.6768017, y: 8.728373, z: 8.544058}
+  m_LocalRotation: {x: 0.70710677, y: -0.00000006030314, z: 0.000000030908268, w: 0.7071068}
+  m_LocalPosition: {x: 0.5027683, y: 13.459714, z: 1.0858841}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -329,6 +330,8 @@ GameObject:
   - component: {fileID: 1226383354}
   - component: {fileID: 1226383353}
   - component: {fileID: 1226383352}
+  - component: {fileID: 1226383357}
+  - component: {fileID: 1226383358}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Enemy
@@ -422,12 +425,45 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226383351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.03, y: 0, z: 0.59}
+  m_LocalPosition: {x: -8.15, y: 0, z: 0.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1226383357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226383351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e33dcf196c52e5419b08af3a92acdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 0
+  Speed: 5
+  Damage: 1
+--- !u!114 &1226383358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226383351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14470e6db9b5c8442ae865d764e12534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+  color1: {r: 0.4746089, g: 1, b: 0, a: 1}
+  currentHealth: 0
+  maxHealth: 0
+  healthBarLength: 60
+  healthBarHeight: 10
 --- !u!1 &1341010229
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +570,8 @@ GameObject:
   - component: {fileID: 1607421384}
   - component: {fileID: 1607421383}
   - component: {fileID: 1607421382}
+  - component: {fileID: 1607421388}
+  - component: {fileID: 1607421387}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Enemy
@@ -627,12 +665,45 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607421381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.35, y: 0, z: 2.41}
+  m_LocalPosition: {x: -6.4700003, y: 0, z: 2.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607421387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607421381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e33dcf196c52e5419b08af3a92acdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 0
+  Speed: 5
+  Damage: 1
+--- !u!114 &1607421388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607421381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14470e6db9b5c8442ae865d764e12534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+  color1: {r: 0.4746089, g: 1, b: 0, a: 1}
+  currentHealth: 0
+  maxHealth: 0
+  healthBarLength: 60
+  healthBarHeight: 10
 --- !u!1 &1808075352
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +826,8 @@ GameObject:
   - component: {fileID: 1924229899}
   - component: {fileID: 1924229898}
   - component: {fileID: 1924229897}
+  - component: {fileID: 1924229903}
+  - component: {fileID: 1924229902}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Enemy
@@ -848,12 +921,45 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924229896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9, y: 0, z: -1.64}
+  m_LocalPosition: {x: -8.0199995, y: 0, z: -1.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1924229902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924229896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e33dcf196c52e5419b08af3a92acdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 0
+  Speed: 5
+  Damage: 1
+--- !u!114 &1924229903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924229896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14470e6db9b5c8442ae865d764e12534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+  color1: {r: 0.4746089, g: 1, b: 0, a: 1}
+  currentHealth: 0
+  maxHealth: 0
+  healthBarLength: 60
+  healthBarHeight: 10
 --- !u!1 &1944386895
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,6 +973,8 @@ GameObject:
   - component: {fileID: 1944386897}
   - component: {fileID: 1944386896}
   - component: {fileID: 1944386900}
+  - component: {fileID: 1944386902}
+  - component: {fileID: 1944386901}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
@@ -944,7 +1052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944386895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: 0, z: 4.19}
+  m_LocalPosition: {x: -4.85, y: 0, z: 4.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -966,3 +1074,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1944386901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944386895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e33dcf196c52e5419b08af3a92acdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 0
+  Speed: 5
+  Damage: 1
+--- !u!114 &1944386902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944386895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14470e6db9b5c8442ae865d764e12534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+  color1: {r: 0.4746089, g: 1, b: 0, a: 1}
+  currentHealth: 0
+  maxHealth: 0
+  healthBarLength: 60
+  healthBarHeight: 10

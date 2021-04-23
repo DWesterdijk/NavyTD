@@ -1,11 +1,16 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class WaveSpawn : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> _enemies, _spawnedEnemies;
+    private Dictionary<int, List<GameObject>> _waves = new Dictionary<int, List<GameObject>>();
+
+    [SerializeField]
+    private List<GameObject> _wave, _wave1, _wave2, _wave3, _spawnedEnemies;
 
     [SerializeField]
     UnityEvent _finishedWave;
@@ -15,19 +20,25 @@ public class WaveSpawn : MonoBehaviour
 
     [SerializeField]
     private float _timeTillNextSpawn;
-    private float _currentTime;
+
+    private int _currentWave = 1;
+
+    [SerializeField]
+    private Text _waveNumbText;
 
     private bool _spawnActive, _waveActive;
-
-    void Awake()
-    {
-        _currentTime = _timeTillNextSpawn;
-    }
 
     private void Start()
     {
         if (_finishedWave == null)
             _finishedWave = new UnityEvent();
+
+        _waveNumbText.text = _currentWave.ToString();
+
+        _waves[1] = _wave;
+        _waves[2] = _wave1;
+        _waves[3] = _wave2;
+        _waves[4] = _wave3;
     }
 
     void Update()
@@ -37,31 +48,33 @@ public class WaveSpawn : MonoBehaviour
             if(_spawnedEnemies.Count == 0 && _waveActive)
             {
                 _finishedWave.Invoke();
+                _currentWave++;
                 _waveActive = false;
+                _waveNumbText.text = _currentWave.ToString();
             }
-            return;
-        }
-
-        _currentTime -= Time.deltaTime;
-        if(_currentTime <= 0)
-        {
-            SpawnEnemies();
-            _currentTime = _timeTillNextSpawn;
         }
     }
 
-    private void SpawnEnemies()
+    private IEnumerator SpawnEnemies()
     {
-        _spawnedEnemies.Add(Instantiate(_enemies[0], _spawnPoint.transform));
-        _enemies.RemoveAt(0);
-        if (0 == _enemies.Count)
-            _spawnActive = false;
+        List<GameObject> listWave = _waves[_currentWave];
+
+        while(listWave.Count != 0)
+        {
+            _spawnedEnemies.Add(Instantiate(listWave[0], _spawnPoint.transform));
+            listWave.RemoveAt(0);
+            yield return new WaitForSeconds(_timeTillNextSpawn);
+        }
+        _spawnActive = false;
     }
 
     public void StartSpawn()
     {
-        _currentTime = _timeTillNextSpawn;
-        _spawnActive = true;
-        _waveActive = true;
+        if (!_spawnActive)
+        {
+            _spawnActive = true;
+            _waveActive = true;
+            StartCoroutine(SpawnEnemies());
+        }
     }
 }

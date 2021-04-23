@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class ShipFire : MonoBehaviour
 {
+    [Header("Damage")]
+    public float damage;
+
+    [Header("Targets")]
     public List<GameObject> targets = new List<GameObject>();
 
     public void Update()
@@ -22,8 +26,13 @@ public class ShipFire : MonoBehaviour
     {
         if (_shootCooldown <= 0)
         {
-            Destroy(targets[0]); //TODO: replace with HP
-            targets.RemoveAt(0);
+            targets[0].GetComponent<GuiHealthBar>().currentHealth -= damage;
+            
+            if (targets[0].GetComponent<GuiHealthBar>().currentHealth <= 0)
+            {
+                targets.RemoveAt(0);
+            }
+
 
             _shootCooldown = 600f;
         }
