@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Upgrade : MonoBehaviour
@@ -9,6 +7,11 @@ public class Upgrade : MonoBehaviour
 
     [SerializeField]
     private GameObject _upgradeShip;
+
+    public void SetUpgradeUI(UpgradeButton ug)
+    {
+        _upgradeUI = ug;
+    }
 
     private void OnMouseOver()
     {
