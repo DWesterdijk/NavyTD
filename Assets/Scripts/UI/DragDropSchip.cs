@@ -1,10 +1,11 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
 public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
+    [SerializeField]
+    private UpgradeButton _upgradeButton;
+
     [SerializeField]
     private GameObject _ship, _previewShip;
     private GameObject _target;
@@ -60,7 +61,10 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             if(hit.transform.gameObject.layer == 4 && _dropable)
-                Instantiate(_ship, hit.point, _ship.transform.rotation);
+            {
+                GameObject obj = Instantiate(_ship, hit.point, _ship.transform.rotation);
+                obj.gameObject.SendMessage("SetUpgradeUI", _upgradeButton, SendMessageOptions.DontRequireReceiver);
+            }
         }
     }
 
