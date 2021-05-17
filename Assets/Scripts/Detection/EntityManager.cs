@@ -13,7 +13,29 @@ public class EntityManager : MonoBehaviour
     }
 
     private List<ShipFire> _towers = new List<ShipFire>();
-    private List<GameObject> _enemies = new List<GameObject>();
 
+    private WaveSpawn _waveSpawn;
 
+    public void AddWaveSpawn(WaveSpawn waveSpawn)
+    {
+        _waveSpawn = waveSpawn;
+    }
+
+    public void AddTowersToList(ShipFire tower)
+    {
+        _towers.Add(tower);
+    }
+
+    public void RemoveEnemiesFromShipList(GameObject enemy)
+    {
+        for (int i = 0; i < _towers.Count; i++)
+        {
+            if (_towers[i].targets.Contains(enemy))
+            {
+                _towers[i].targets.Remove(enemy);
+            }
+        }
+
+        _waveSpawn.spawnedEnemies.Remove(enemy);
+    }
 }

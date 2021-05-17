@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14470e6db9b5c8442ae865d764e12534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 3}
+  healthBar: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
   color1: {r: 0, g: 1, b: 0, a: 1}
   currentHealth: 0
   maxHealth: 0
