@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class EnemyShipStats : MonoBehaviour
 {
-    public float Health;
+    public float MaxHealth;
+    public float Speed;
+    public float Damage;
 
-    private void Update()
-    {
-        if (this.GetComponent<GuiHealthBar>().currentHealth <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    //TODO: Make it work with other scripts that need to use this.
 }

@@ -45,5 +45,10 @@ public class EnemyShipControl : MonoBehaviour
         {
             _wayPointIndex += 1;
         }
+
+        if (_wayPointIndex == _wayPoints.Length)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

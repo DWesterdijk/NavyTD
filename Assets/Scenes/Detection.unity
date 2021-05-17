@@ -443,7 +443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e33dcf196c52e5419b08af3a92acdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 200
+  MaxHealth: 0
+  Speed: 5
+  Damage: 1
 --- !u!114 &1226383358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,7 +683,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e33dcf196c52e5419b08af3a92acdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 200
+  MaxHealth: 0
+  Speed: 5
+  Damage: 1
 --- !u!114 &1607421388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,7 +939,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e33dcf196c52e5419b08af3a92acdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 200
+  MaxHealth: 0
+  Speed: 5
+  Damage: 1
 --- !u!114 &1924229903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,7 +1086,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e33dcf196c52e5419b08af3a92acdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 200
+  MaxHealth: 0
+  Speed: 5
+  Damage: 1
 --- !u!114 &1944386902
 MonoBehaviour:
   m_ObjectHideFlags: 0
