@@ -20,6 +20,11 @@ public class ShipFire : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        EntityManager.current.AddTowersToList(this);
+    }
+
     private float _shootCooldown = 100f;
 
     private void Shoot()
