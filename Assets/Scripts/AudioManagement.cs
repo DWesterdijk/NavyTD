@@ -13,23 +13,46 @@ public class AudioManagement : MonoBehaviour
     public Slider MusicSlider;
     public Slider EffectSlider;
 
+    //AUdio buttons
+    public Button CloseTab;
+    public Button OpenTab;
+
     //All the audio sources
     public AudioSource MusicSource;
     public AudioSource CannonSource;
-
-    //The music clips
-    public AudioClip MainMusic;
 
     //Percentage
     float MasterVolume;
     float _tempEffectVolume;
     float _tempMusicVolume;
 
+    private void Start()
+    {
+        //Deactivates on start of the game
+        this.gameObject.SetActive(false);
+    }
+
     private void Update()
     {
         ChangeMasterVolume();
         ChangeMusicVolume();
         ChangeEffectVolume();
+    }
+
+    //Opens the volume menu
+    public void OpenVolumeMenu()
+    {
+        this.gameObject.SetActive(true);
+        CloseTab.gameObject.SetActive(true);
+        OpenTab.gameObject.SetActive(false);
+    }
+
+    //Closes the volume menu
+    public void CloseVolumeMenu()
+    {
+        this.gameObject.SetActive(false);
+        CloseTab.gameObject.SetActive(false);
+        OpenTab.gameObject.SetActive(true);
     }
 
     public void ChangeMasterVolume()
