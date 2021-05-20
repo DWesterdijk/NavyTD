@@ -31,6 +31,7 @@ public class GuiHealthBar : MonoBehaviour
         if (currentHealth <= 0)
         {
             // get score
+            EntityManager.current.RemoveEnemiesFromShipList(this.gameObject);
             Destroy(this.gameObject);
         }
     }

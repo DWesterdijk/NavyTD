@@ -10,7 +10,7 @@ public class WaveSpawn : MonoBehaviour
     private Dictionary<int, List<GameObject>> _waves = new Dictionary<int, List<GameObject>>();
 
     [SerializeField]
-    private List<GameObject> _wave, _wave1, _wave2, _wave3, _spawnedEnemies;
+    private List<GameObject> _wave, _wave1, _wave2, _wave3;
 
     [SerializeField]
     UnityEvent _finishedWave;
@@ -28,12 +28,16 @@ public class WaveSpawn : MonoBehaviour
 
     private bool _spawnActive, _waveActive;
 
+    public List<GameObject> spawnedEnemies;
+
     private void Start()
     {
         if (_finishedWave == null)
             _finishedWave = new UnityEvent();
 
         _waveNumbText.text = _currentWave.ToString();
+
+        EntityManager.current.AddWaveSpawn(this);
 
         _waves[1] = _wave;
         _waves[2] = _wave1;
@@ -45,7 +49,7 @@ public class WaveSpawn : MonoBehaviour
     {
         if (!_spawnActive)
         {
-            if(_spawnedEnemies.Count == 0 && _waveActive)
+            if(spawnedEnemies.Count == 0 && _waveActive)
             {
                 _finishedWave.Invoke();
                 _currentWave++;
@@ -61,7 +65,7 @@ public class WaveSpawn : MonoBehaviour
 
         while(listWave.Count != 0)
         {
-            _spawnedEnemies.Add(Instantiate(listWave[0], _spawnPoint.transform));
+            spawnedEnemies.Add(Instantiate(listWave[0], _spawnPoint.transform));
             listWave.RemoveAt(0);
             yield return new WaitForSeconds(_timeTillNextSpawn);
         }
