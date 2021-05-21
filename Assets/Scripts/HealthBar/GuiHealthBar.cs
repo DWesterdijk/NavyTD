@@ -20,7 +20,7 @@ public class GuiHealthBar : MonoBehaviour
 
     private void Start()
     {
-        maxHealth = this.GetComponent<EnemyShipStats>().Health;
+        maxHealth = this.GetComponent<EnemyShipStats>().MaxHealth;
         currentHealth = maxHealth;
     }
 
@@ -31,6 +31,7 @@ public class GuiHealthBar : MonoBehaviour
         if (currentHealth <= 0)
         {
             // get score
+            EntityManager.current.RemoveEnemiesFromShipList(this.gameObject);
             Destroy(this.gameObject);
         }
     }

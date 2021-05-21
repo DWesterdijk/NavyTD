@@ -20,7 +20,15 @@ public class ShipFire : MonoBehaviour
         }
     }
 
-    private float _shootCooldown = 100f;
+    private void Start()
+    {
+        EntityManager.current.AddTowersToList(this);
+    }
+
+
+    public float totalCooldown;
+
+    private float _shootCooldown;
 
     private void Shoot()
     {
@@ -34,11 +42,11 @@ public class ShipFire : MonoBehaviour
             }
 
 
-            _shootCooldown = 600f;
+            _shootCooldown = totalCooldown;
         }
         else
         {
-            _shootCooldown--;
+            _shootCooldown -= Time.deltaTime;
         }
     }
 }
