@@ -13,12 +13,14 @@ public class EnemyShipControl : MonoBehaviour
     GameObject WayPointManagerObj;
     WayPointManager wayPointManager;
 
-    public float EnemyMoveSpeed = 2f;
+    public float EnemyMoveSpeed;
 
     int _wayPointIndex = 0;
 
     private void Awake()
     {
+        EnemyMoveSpeed = this.gameObject.GetComponent<EnemyShipStats>().speed;
+
         WayPointManagerObj = GameObject.FindWithTag("WayPoints");
         wayPointManager = WayPointManagerObj.GetComponent<WayPointManager>();
         _wayPoints = wayPointManager.WayPoints;
@@ -44,6 +46,9 @@ public class EnemyShipControl : MonoBehaviour
         if (transform.position == _wayPoints [_wayPointIndex].transform.position)
         {
             _wayPointIndex += 1;
+
+            //Makes the ship look at next checkpoint
+            transform.LookAt(_wayPoints[_wayPointIndex]);
         }
 
         if (_wayPointIndex == _wayPoints.Length)
