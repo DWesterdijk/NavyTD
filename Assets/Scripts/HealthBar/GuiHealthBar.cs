@@ -20,7 +20,7 @@ public class GuiHealthBar : MonoBehaviour
 
     private void Start()
     {
-        maxHealth = this.GetComponent<EnemyShipStats>().MaxHealth;
+        maxHealth = this.GetComponent<EnemyShipStats>().maxHealth;
         currentHealth = maxHealth;
     }
 
@@ -32,6 +32,11 @@ public class GuiHealthBar : MonoBehaviour
         {
             // get score
             EntityManager.current.RemoveEnemiesFromShipList(this.gameObject);
+
+            //TODO: look if there's a cleaner way of doing this.
+            ScoringTracker.current.money += this.gameObject.GetComponent<EnemyShipStats>().moneyDroppedOnDeath;
+            ScoringTracker.current.score += this.gameObject.GetComponent<EnemyShipStats>().scoreDroppedOnDeath;
+
             Destroy(this.gameObject);
         }
     }

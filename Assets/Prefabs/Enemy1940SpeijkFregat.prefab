@@ -641,9 +641,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e33dcf196c52e5419b08af3a92acdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 200
-  Speed: 0
-  Damage: 1
+  maxHealth: 0
+  speed: 0
+  damage: 0
+  scoreDroppedOnDeath: 10
+  moneyDroppedOnDeath: 25
 --- !u!114 &-470824756117471178
 MonoBehaviour:
   m_ObjectHideFlags: 0

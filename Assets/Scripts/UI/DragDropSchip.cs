@@ -64,6 +64,9 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
             {
                 GameObject obj = Instantiate(_ship, hit.point, _ship.transform.rotation);
                 obj.gameObject.SendMessage("SetUpgradeUI", _upgradeButton, SendMessageOptions.DontRequireReceiver);
+
+                //TODO: Ask Ruben to add a check for if player has enough money to place ship.
+                ScoringTracker.current.money -= obj.gameObject.GetComponent<PlayerShipStats>().shipCost;
             }
         }
     }

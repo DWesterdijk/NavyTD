@@ -18,6 +18,14 @@ public class ScoringTracker : MonoBehaviour
     [SerializeField]
     private Text _scoreText;
 
+    public static ScoringTracker current;
+
+    private void Awake()
+    {
+        if (current == null)
+            current = this;
+    }
+
     [SerializeField]
     private void Update()
     {
