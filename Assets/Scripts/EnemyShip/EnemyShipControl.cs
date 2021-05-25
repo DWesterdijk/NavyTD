@@ -13,17 +13,19 @@ public class EnemyShipControl : MonoBehaviour
     GameObject WayPointManagerObj;
     WayPointManager wayPointManager;
 
-    public float EnemyMoveSpeed;
+    private EnemyShipStats _shipStats;
 
     int _wayPointIndex = 0;
 
     private void Awake()
     {
-        EnemyMoveSpeed = this.gameObject.GetComponent<EnemyShipStats>().speed;
+        _shipStats = this.gameObject.GetComponent<EnemyShipStats>();
 
         WayPointManagerObj = GameObject.FindWithTag("WayPoints");
         wayPointManager = WayPointManagerObj.GetComponent<WayPointManager>();
         _wayPoints = wayPointManager.WayPoints;
+
+        Debug.Log(_wayPoints.Length);
     }
 
     private void Start()
@@ -40,20 +42,23 @@ public class EnemyShipControl : MonoBehaviour
     void MoveShip()
     {
         //Moves the ship to the target waypoint
-        transform.position = Vector3.MoveTowards(transform.position, _wayPoints[_wayPointIndex].transform.position, EnemyMoveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _wayPoints[_wayPointIndex].transform.position, _shipStats.speed * Time.deltaTime);
 
         //Sets the current waypoint to the next one in line
         if (transform.position == _wayPoints [_wayPointIndex].transform.position)
         {
             _wayPointIndex += 1;
 
-            //Makes the ship look at next checkpoint
-            transform.LookAt(_wayPoints[_wayPointIndex]);
-        }
-
-        if (_wayPointIndex == _wayPoints.Length)
-        {
-            Destroy(this.gameObject);
+            if (_wayPointIndex == _wayPoints.Length)
+            {
+                ScoringTracker.current.lives -= _shipStats.damage;
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                //Makes the ship look at next checkpoint
+                transform.LookAt(_wayPoints[_wayPointIndex]);
+            }
         }
     }
 }
