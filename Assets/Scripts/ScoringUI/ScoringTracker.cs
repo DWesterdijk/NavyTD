@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ScoringTracker : MonoBehaviour
 {
+    public static ScoringTracker current;
+
     [Header("Values")]
     public int lives;
     public int money;
@@ -24,5 +26,18 @@ public class ScoringTracker : MonoBehaviour
         _livesText.text = "Lives: " + lives.ToString();
         _moneyText.text = "Money: " + money.ToString();
         _scoreText.text = "Score: " + score.ToString();
+
+        if(lives <= 0)
+        {
+            SceneSwitch.current.SwitchScene(2);
+        }
+    }
+
+    private void Start()
+    {
+        if (current != null)
+            return;
+
+        current = this;
     }
 }
