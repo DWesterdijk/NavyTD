@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaveSpawn : MonoBehaviour
 {
@@ -51,8 +52,14 @@ public class WaveSpawn : MonoBehaviour
         {
             if(spawnedEnemies.Count == 0 && _waveActive)
             {
-                _finishedWave.Invoke();
                 _currentWave++;
+
+                if (_currentWave == 5)
+                {
+                    SceneManager.LoadSceneAsync(3 /*Winscreen*/, LoadSceneMode.Single);
+                }
+
+                _finishedWave.Invoke();
                 _waveActive = false;
                 _waveNumbText.text = _currentWave.ToString();
             }

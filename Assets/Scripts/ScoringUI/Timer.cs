@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class Timer : MonoBehaviour
         }
         else if (minutes <= 0 && seconds <= 0)
         {
-            //TODO: make something happen if timer hits 0
+            SceneManager.LoadSceneAsync(2/*You lose screen*/, LoadSceneMode.Single);
         }
 
         _minutesText.text = minutes.ToString();
