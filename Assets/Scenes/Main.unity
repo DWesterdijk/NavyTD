@@ -2746,6 +2746,7 @@ MonoBehaviour:
   _ship: {fileID: 4047961479497037935, guid: 76ebd2ccd88cc82459c3feb1daa7e756, type: 3}
   _previewShip: {fileID: 4047961479497037935, guid: 89e6780247cfae0459eef077d4b50ab2,
     type: 3}
+  _cost: 0
 --- !u!114 &1940671111
 MonoBehaviour:
   m_ObjectHideFlags: 0

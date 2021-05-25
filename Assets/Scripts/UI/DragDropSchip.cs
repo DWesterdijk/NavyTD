@@ -8,6 +8,10 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
 
     [SerializeField]
     private GameObject _ship, _previewShip;
+
+    [SerializeField]
+    private int _cost;
+
     private GameObject _target;
     private Material _targetMat;
     private bool _dropable;
@@ -60,8 +64,9 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            if(hit.transform.gameObject.layer == 4 && _dropable)
+            if(hit.transform.gameObject.layer == 4 && _dropable && ScoringTracker.current.money >= _cost)
             {
+                ScoringTracker.current.money -= _cost;
                 GameObject obj = Instantiate(_ship, hit.point, _ship.transform.rotation);
                 obj.gameObject.SendMessage("SetUpgradeUI", _upgradeButton, SendMessageOptions.DontRequireReceiver);
             }
