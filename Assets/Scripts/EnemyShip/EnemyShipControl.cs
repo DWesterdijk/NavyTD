@@ -52,7 +52,6 @@ public class EnemyShipControl : MonoBehaviour
             if (_wayPointIndex == _wayPoints.Length)
             {
                 ScoringTracker.current.lives -= _shipStats.damage;
-                ScoringTracker.current.money += _shipStats.money;
                 Destroy(this.gameObject);
             }
             else

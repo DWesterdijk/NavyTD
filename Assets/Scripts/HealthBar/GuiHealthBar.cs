@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GuiHealthBar : MonoBehaviour
 {
+    private EnemyShipStats _enemyShipStats;
+
     public Texture healthBar;
     public Color color1;
 
@@ -20,7 +22,8 @@ public class GuiHealthBar : MonoBehaviour
 
     private void Start()
     {
-        maxHealth = this.GetComponent<EnemyShipStats>().maxHealth;
+        _enemyShipStats = this.GetComponent<EnemyShipStats>();
+        maxHealth = _enemyShipStats.maxHealth;
         currentHealth = maxHealth;
     }
 
@@ -32,6 +35,8 @@ public class GuiHealthBar : MonoBehaviour
         {
             // get score
             EntityManager.current.RemoveEnemiesFromShipList(this.gameObject);
+            ScoringTracker.current.money += _enemyShipStats.money;
+            ScoringTracker.current.score += _enemyShipStats.score;
             Destroy(this.gameObject);
         }
     }

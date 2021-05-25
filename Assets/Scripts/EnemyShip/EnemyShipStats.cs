@@ -8,6 +8,7 @@ public class EnemyShipStats : MonoBehaviour
     public float speed;
     public int damage;
     public int money;
+    public int score;
 
     //TODO: Make it work with other scripts that need to use this.
 }
