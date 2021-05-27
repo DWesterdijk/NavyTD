@@ -7,13 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Anker2
+    second: {fileID: 2100000, guid: 39e6680206ae8224499baa3e10a3243b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Boothul
     second: {fileID: 2100000, guid: 0909a6062b25edf4d841d2cc72701b3a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Hek1
+    second: {fileID: 2100000, guid: f87570893cf301d4c99b00a0e01a3de3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kabine1
+    second: {fileID: 2100000, guid: f7c8132ef778dd14598a30ac9608777b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roeiboot
+    second: {fileID: 2100000, guid: c5d048644be0a0d4da739df657740edb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Uitkijktoren
     second: {fileID: 2100000, guid: 15663bfc7c27f3e4097789366185498a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kanon
+    second: {fileID: 2100000, guid: 0ec6bfc84f0ad304f91e0e40881da6b6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

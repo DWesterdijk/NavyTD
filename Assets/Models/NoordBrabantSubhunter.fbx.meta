@@ -3,7 +3,42 @@ guid: a0424af805cd7364b9cca1219766a9cf
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blok_Eind
+    second: {fileID: 2100000, guid: 33c651a57031fd341bd4f0e388a8dd05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hull1
+    second: {fileID: 2100000, guid: ed5168336043d5249b04031e3fad5cfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kabineblok
+    second: {fileID: 2100000, guid: 8e6d3faae9b825942942aa9d7876bedf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kanon_Groot
+    second: {fileID: 2100000, guid: bbd7b03c860e0fe4d8a085109c432cf7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kanon_klein
+    second: {fileID: 2100000, guid: 99ba4e3ddcc7acf4f9a8a86ca879588e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Middenblok1
+    second: {fileID: 2100000, guid: 9c6c3c8128616884185a1e73244b4759, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pijp1
+    second: {fileID: 2100000, guid: 5335a2bc9f7521d469dae67c7017c0f0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
