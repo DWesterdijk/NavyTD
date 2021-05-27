@@ -3,7 +3,17 @@ guid: 331d645dc2b3b2b42909dc1c05fbe790
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boothul
+    second: {fileID: 2100000, guid: 0909a6062b25edf4d841d2cc72701b3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Uitkijktoren
+    second: {fileID: 2100000, guid: 15663bfc7c27f3e4097789366185498a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
