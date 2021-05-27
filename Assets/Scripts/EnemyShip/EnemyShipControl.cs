@@ -24,8 +24,6 @@ public class EnemyShipControl : MonoBehaviour
         WayPointManagerObj = GameObject.FindWithTag("WayPoints");
         wayPointManager = WayPointManagerObj.GetComponent<WayPointManager>();
         _wayPoints = wayPointManager.WayPoints;
-
-        Debug.Log(_wayPoints.Length);
     }
 
     private void Start()
