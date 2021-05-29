@@ -50,6 +50,7 @@ public class EnemyShipControl : MonoBehaviour
             if (_wayPointIndex == _wayPoints.Length)
             {
                 ScoringTracker.current.lives -= _shipStats.damage;
+                EntityManager.current.RemoveEnemiesFromShipList(this.gameObject);
                 Destroy(this.gameObject);
             }
             else
