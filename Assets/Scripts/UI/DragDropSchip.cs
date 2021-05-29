@@ -13,13 +13,12 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
     private int _cost;
 
     private GameObject _target;
-    private Material _targetMat;
     private bool _dropable;
-    private int _waterLayer = 1 << 4, _allLayers = 1 << 7;
+    private int _allLayers = 1 << 7;
 
     private void Awake()
     {
-        _allLayers =~ LayerMask.GetMask("Ignore Raycast");
+        _allLayers =~ LayerMask.GetMask("Detection");
     }
 
     //Activates when the player begins the drag. Spawns a preview ship .
@@ -30,7 +29,6 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             _target = Instantiate(_previewShip, hit.point, _previewShip.transform.rotation);
-            //_targetMat = _target.gameObject.GetComponent<Renderer>().material;
             _target.gameObject.SendMessage("OnSpawn", this, SendMessageOptions.DontRequireReceiver);
         }
     }
@@ -62,7 +60,7 @@ public class DragDropSchip : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
         DestroyImmediate(_target);
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, _allLayers))
         {
             if(hit.transform.gameObject.layer == 4 && _dropable && ScoringTracker.current.money >= _cost)
             {

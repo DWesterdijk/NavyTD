@@ -28,9 +28,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1b0fa3440b694a94b7a91ba96db58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 55
   targets: []
-  totalCooldown: 0
+  totalCooldown: 2
 --- !u!1 &8664062363466532951
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7101267490586017309}
   - component: {fileID: 6058496542432083544}
   - component: {fileID: 628691294917705786}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Detection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 8664062363466532951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -77, z: 0}
-  m_LocalScale: {x: 10000, y: 1, z: 10000}
+  m_LocalScale: {x: 13000, y: 1, z: 13000}
   m_Children: []
   m_Father: {fileID: 111597317266732828}
   m_RootOrder: 0

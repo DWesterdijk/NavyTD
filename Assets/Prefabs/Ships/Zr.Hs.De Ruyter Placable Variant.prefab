@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4917727175303416930}
   - component: {fileID: 3462068084186647486}
   - component: {fileID: 6061476805670287927}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Detection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 109168569137578275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.28, z: 0}
-  m_LocalScale: {x: 40, y: 1, z: 40}
+  m_LocalScale: {x: 120, y: 1, z: 120}
   m_Children: []
   m_Father: {fileID: 6759729655719593704}
   m_RootOrder: 0
@@ -137,9 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1b0fa3440b694a94b7a91ba96db58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 40
   targets: []
-  totalCooldown: 6
+  totalCooldown: 1.6
 --- !u!1001 &9160408086262553991
 PrefabInstance:
   m_ObjectHideFlags: 0

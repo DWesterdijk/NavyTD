@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2590994548193465368}
   - component: {fileID: 6952655566340526295}
   - component: {fileID: 1611874301424007844}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Detection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2970567185602739918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.05, z: 1}
+  m_LocalScale: {x: 2, y: 0.05, z: 2}
   m_Children: []
   m_Father: {fileID: 5598608409727130810}
   m_RootOrder: 2
@@ -140,7 +140,7 @@ MonoBehaviour:
   _upgradeUI: {fileID: 0}
   _upgradeShip: {fileID: 776775860968598950, guid: e7c5fadb96ee63844b867d0ff9f79a01,
     type: 3}
-  _cost: 15
+  _cost: 450
 --- !u!114 &1076799768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1b0fa3440b694a94b7a91ba96db58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 8
+  damage: 34
   targets: []
-  totalCooldown: 6
+  totalCooldown: 1.2
 --- !u!1001 &5348299241681959761
 PrefabInstance:
   m_ObjectHideFlags: 0
