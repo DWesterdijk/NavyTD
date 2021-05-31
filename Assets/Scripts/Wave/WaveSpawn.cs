@@ -11,7 +11,7 @@ public class WaveSpawn : MonoBehaviour
     private Dictionary<int, List<GameObject>> _waves = new Dictionary<int, List<GameObject>>();
 
     [SerializeField]
-    private List<GameObject> _wave, _wave1, _wave2, _wave3;
+    private List<GameObject> _wave, _wave1, _wave2, _wave3, _wave4;
 
     [SerializeField]
     UnityEvent _finishedWave;
@@ -44,6 +44,7 @@ public class WaveSpawn : MonoBehaviour
         _waves[2] = _wave1;
         _waves[3] = _wave2;
         _waves[4] = _wave3;
+        _waves[5] = _wave4;
     }
 
     void Update()
@@ -54,7 +55,7 @@ public class WaveSpawn : MonoBehaviour
             {
                 _currentWave++;
 
-                if (_currentWave == 5)
+                if (_currentWave == 6)
                 {
                     SceneManager.LoadSceneAsync(3 /*Winscreen*/, LoadSceneMode.Single);
                 }
