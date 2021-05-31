@@ -35,7 +35,7 @@ public class ShipFire : MonoBehaviour
         if (_shootCooldown <= 0)
         {
             targets[0].GetComponent<GuiHealthBar>().currentHealth -= damage;
-            
+            Debug.Log("shot");
             if (targets[0].GetComponent<GuiHealthBar>().currentHealth <= 0)
             {
                 targets.RemoveAt(0);
