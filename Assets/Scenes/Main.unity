@@ -1229,6 +1229,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &501926195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4905097270183184105, guid: eee7ac96eac965148a8e86b144ced48b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1579300038}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &558956517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,18 +2378,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2724034831199378798, guid: e9faaf3a4a73dc3408a807b11a64c83c, type: 3}
---- !u!114 &1199192725 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 685723283410459340, guid: eee7ac96eac965148a8e86b144ced48b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1579300038}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1223444310 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5350140151355010634, guid: e9faaf3a4a73dc3408a807b11a64c83c,
@@ -3430,18 +3430,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 1439416756}
     m_Modifications:
     - target: {fileID: 66529582, guid: eee7ac96eac965148a8e86b144ced48b, type: 3}
-      propertyPath: _costText
+      propertyPath: _sellText
       value: 
-      objectReference: {fileID: 1199192725}
+      objectReference: {fileID: 501926195}
     - target: {fileID: 2873943023460121379, guid: eee7ac96eac965148a8e86b144ced48b,
         type: 3}
       propertyPath: m_Name
       value: Upgrade Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2873943023460121379, guid: eee7ac96eac965148a8e86b144ced48b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2873943023460121404, guid: eee7ac96eac965148a8e86b144ced48b,
         type: 3}
@@ -4048,7 +4043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 99.1, y: 58}
+  m_AnchoredPosition: {x: 99.1001, y: 58}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1873452625

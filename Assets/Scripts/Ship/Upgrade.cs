@@ -17,12 +17,10 @@ public class Upgrade : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        Debug.Log("MouseOver");
         if (Input.GetMouseButtonDown(1) && !_upgradeShip.gameObject.activeInHierarchy)
         {
-            
             _upgradeUI.gameObject.SetActive(true);
-            _upgradeUI.SetShip(_upgradeShip, this.gameObject, _cost);
+            _upgradeUI.SetShip(_upgradeShip, this.gameObject, _cost, _cost/4);
         }
     }
 }
