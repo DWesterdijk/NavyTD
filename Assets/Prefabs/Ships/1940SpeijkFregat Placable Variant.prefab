@@ -166,6 +166,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-4196289600071663844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909744350047699652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4baf1389ce234a74097743dbc9c52ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmoCount: 10
+  currentAmmoCount: 0
+  reloadDuration: 5
+  ableToFire: 0
+  ReloadButton: {fileID: 0}
+  PopUpWarning: {fileID: 0}
 --- !u!114 &1886907736
 MonoBehaviour:
   m_ObjectHideFlags: 0
