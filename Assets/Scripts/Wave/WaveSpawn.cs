@@ -47,6 +47,11 @@ public class WaveSpawn : MonoBehaviour
         _waves[5] = _wave4;
     }
 
+    public int GetCurrentWaveNumber()
+    {
+        return _currentWave;
+    }
+
     void Update()
     {
         if (!_spawnActive)
