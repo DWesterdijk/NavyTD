@@ -10,5 +10,14 @@ public class EnemyShipStats : MonoBehaviour
     public int money;
     public int score;
 
-    //TODO: Make it work with other scripts that need to use this.
+    private void Awake()
+    {
+        IncreaseStats();
+    }
+
+    public void IncreaseStats()
+    {
+        float multiplier = 1.125f * WaveSpawn.current.GetCurrentWaveNumber();
+        maxHealth *= multiplier;
+    }
 }
