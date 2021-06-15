@@ -11,6 +11,7 @@ public class ShipFire : MonoBehaviour
     [Header("Targets")]
     public List<GameObject> targets = new List<GameObject>();
 
+    [SerializeField]
     private ParticleSystem _shootparticles;
 
     public void Update()
@@ -38,7 +39,7 @@ public class ShipFire : MonoBehaviour
         {
             targets[0].GetComponent<GuiHealthBar>().currentHealth -= damage;
             Debug.Log("shot");
-            shootparticles.Play();
+            _shootparticles.Play();
             if (targets[0].GetComponent<GuiHealthBar>().currentHealth <= 0)
             {
                 targets.RemoveAt(0);

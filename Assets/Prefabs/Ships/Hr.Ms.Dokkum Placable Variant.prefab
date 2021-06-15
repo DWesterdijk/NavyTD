@@ -43,7 +43,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   targets: []
+  _shootparticles: {fileID: 1905890585785964447}
   totalCooldown: 1
+--- !u!114 &8132009732630310579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083505600367694882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6e70fef95a95144926b863b2eeaa4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 7763198453219362067}
 --- !u!114 &8555193405745547189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +86,6 @@ GameObject:
   - component: {fileID: 7763198453219362067}
   - component: {fileID: 6293399773227515981}
   - component: {fileID: 7803555760744255222}
-  - component: {fileID: 1640943998539823899}
   m_Layer: 8
   m_Name: DetectionRange
   m_TagString: Untagged
@@ -169,19 +182,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1640943998539823899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494540390488682812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b6e70fef95a95144926b863b2eeaa4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _renderer: {fileID: 0}
 --- !u!1001 &1165148744349985139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,33 +297,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 345568882313631974, guid: 625de0644ff9dd7479327275c2b461e5,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 345568882313631974, guid: 625de0644ff9dd7479327275c2b461e5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 345568882313631974, guid: 625de0644ff9dd7479327275c2b461e5,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 345568882313631974, guid: 625de0644ff9dd7479327275c2b461e5,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 345568882313631974, guid: 625de0644ff9dd7479327275c2b461e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.32
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 345568882313631974, guid: 625de0644ff9dd7479327275c2b461e5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26.8
+      value: 4.7
       objectReference: {fileID: 0}
     - target: {fileID: 345568882313631974, guid: 625de0644ff9dd7479327275c2b461e5,
         type: 3}
@@ -365,20 +350,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shootburst
       objectReference: {fileID: 0}
-    - target: {fileID: 5558621999903418029, guid: 625de0644ff9dd7479327275c2b461e5,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558621999903418029, guid: 625de0644ff9dd7479327275c2b461e5,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558621999903418029, guid: 625de0644ff9dd7479327275c2b461e5,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 625de0644ff9dd7479327275c2b461e5, type: 3}
+--- !u!198 &1905890585785964447 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5558621999903418029, guid: 625de0644ff9dd7479327275c2b461e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6293538731687326002}
+  m_PrefabAsset: {fileID: 0}
