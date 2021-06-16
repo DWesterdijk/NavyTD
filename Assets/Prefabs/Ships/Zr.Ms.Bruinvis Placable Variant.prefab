@@ -28,11 +28,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4baf1389ce234a74097743dbc9c52ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmoCount: 10
-  currentAmmoCount: 0
-  reloadDuration: 3
+  _maxAmmoCount: 12
+  _currentAmmoCount: 0
+  _reloadDuration: 1
   ableToFire: 0
-  ReloadButton: {fileID: 0}
 --- !u!114 &3094218073501975250
 MonoBehaviour:
   m_ObjectHideFlags: 0

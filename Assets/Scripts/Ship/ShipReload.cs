@@ -9,8 +9,11 @@ using UnityEngine;
 public class ShipReload : MonoBehaviour
 {
     //All ammo and time amounts, they can be changed in the inspector
-    [SerializeField] 
-    int _maxAmmoCount, _currentAmmoCount, _reloadDuration;
+    [SerializeField]
+    private int _maxAmmoCount, _currentAmmoCount;
+    [SerializeField]
+    private float _reloadDuration;
+    
     public bool ableToFire;
 
     private void Start()

@@ -151,9 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4baf1389ce234a74097743dbc9c52ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxAmmoCount: 0
+  _maxAmmoCount: 16
   _currentAmmoCount: 0
-  _reloadDuration: 0
+  _reloadDuration: 0.75
   ableToFire: 0
 --- !u!114 &4484834360236703257
 MonoBehaviour:
