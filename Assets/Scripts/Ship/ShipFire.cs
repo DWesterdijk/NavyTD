@@ -13,6 +13,7 @@ public class ShipFire : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem _shootparticles;
+    private ShipReload shipReload;
 
     public void Update()
     {
@@ -26,8 +27,8 @@ public class ShipFire : MonoBehaviour
     private void Start()
     {
         EntityManager.current.AddTowersToList(this);
+        shipReload = gameObject.GetComponentInParent<ShipReload>();
     }
-
 
     public float totalCooldown;
 
@@ -35,7 +36,7 @@ public class ShipFire : MonoBehaviour
 
     private void Shoot()
     {
-        if (_shootCooldown <= 0)
+        if (_shootCooldown <= 0 && shipReload.ableToFire == true)
         {
             targets[0].GetComponent<GuiHealthBar>().currentHealth -= damage;
             Debug.Log("shot");
@@ -45,7 +46,7 @@ public class ShipFire : MonoBehaviour
                 targets.RemoveAt(0);
             }
 
-
+            shipReload.OnShipFire();
             _shootCooldown = totalCooldown;
         }
         else

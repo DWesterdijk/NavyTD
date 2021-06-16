@@ -193,6 +193,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 1251908889}
+  maxAmmoCount: 10
+  currentAmmoCount: 0
+  reloadDuration: 5
+  ableToFire: 0
+  ReloadButton: {fileID: 0}
+  PopUpWarning: {fileID: 0}
 --- !u!114 &1886907736
 MonoBehaviour:
   m_ObjectHideFlags: 0
