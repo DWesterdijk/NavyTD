@@ -184,6 +184,22 @@ MonoBehaviour:
   targets: []
   _shootparticles: {fileID: 6016165682973360623}
   totalCooldown: 1.2
+--- !u!114 &2612702048686274581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114277194431759872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4baf1389ce234a74097743dbc9c52ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxAmmoCount: 0
+  _currentAmmoCount: 0
+  _reloadDuration: 0
+  ableToFire: 0
 --- !u!1001 &2186928156734121794
 PrefabInstance:
   m_ObjectHideFlags: 0
