@@ -156,6 +156,23 @@ MonoBehaviour:
   damage: 34
   targets: []
   totalCooldown: 1.2
+--- !u!114 &4914050875590201059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114277194431759872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4baf1389ce234a74097743dbc9c52ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmoCount: 10
+  currentAmmoCount: 0
+  reloadDuration: 3
+  ableToFire: 0
+  ReloadButton: {fileID: 0}
 --- !u!1001 &5348299241681959761
 PrefabInstance:
   m_ObjectHideFlags: 0
