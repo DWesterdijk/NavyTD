@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class WaveSpawn : MonoBehaviour
 {
+    public static WaveSpawn current;
+
     [SerializeField]
     private Dictionary<int, List<GameObject>> _waves = new Dictionary<int, List<GameObject>>();
 
@@ -31,6 +33,14 @@ public class WaveSpawn : MonoBehaviour
 
     public List<GameObject> spawnedEnemies;
 
+    private void Awake()
+    {
+        if(current == null)
+        {
+            current = this;
+        }
+    }
+
     private void Start()
     {
         if (_finishedWave == null)
@@ -45,6 +55,11 @@ public class WaveSpawn : MonoBehaviour
         _waves[3] = _wave2;
         _waves[4] = _wave3;
         _waves[5] = _wave4;
+    }
+
+    public int GetCurrentWaveNumber()
+    {
+        return _currentWave;
     }
 
     void Update()
