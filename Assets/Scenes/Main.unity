@@ -5358,9 +5358,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1439416756}
     m_Modifications:
+    - target: {fileID: 163917492, guid: 84c0a781645caa14eb6305c39c36b425, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 205890698, guid: 84c0a781645caa14eb6305c39c36b425, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 205890699, guid: 84c0a781645caa14eb6305c39c36b425, type: 3}
+      propertyPath: m_Text
+      value: Het doel van het spel is het beschermen van je basis(Eiland), Dit doe
+        je door het plaatsen van schepen die aan de rechter kant van het scherm te
+        zien Zijn. Als je op de schepen drukt met de rechter muis knop kan je ze
+        upgraden als je genoeg geld hebt. Hoe duurder de schepen, hoe sterker ze
+        zijn, dit geld ook voor elke upgrade. Wanneer jouw schepen geen munitie meer
+        hebben moet je ze herladen door op de knop te druken die te voorschijn komt.
+        Je wint wanneer je alle waves verlaat en verliest wanneer je geen levens
+        meer hebt.
+      objectReference: {fileID: 0}
     - target: {fileID: 205890699, guid: 84c0a781645caa14eb6305c39c36b425, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 651903831, guid: 84c0a781645caa14eb6305c39c36b425, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 2408997611779525590, guid: 84c0a781645caa14eb6305c39c36b425,
         type: 3}
